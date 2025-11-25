@@ -1,27 +1,17 @@
 {
   "meta": {
-    "generatedAt": "2025-11-25T14:30:20.289Z",
-    "root": "/Users/vivekkumar/Documents/codebase/homeoffice/scan-yarn",
+    "generatedAt": "2025-11-25T15:40:06.223Z",
+    "root": "",
     "scanner": "hof-vulnerabilities-scanner",
     "version": "1.0.0",
-    "scannedFilesCount": 2,
-    "findingsCount": 0,
+    "scannedFilesCount": 0,
+    "vulnerabilitiesCount": 0,
     "compromisedPackageCount": 526,
     "compromisedVersionCount": 979,
-    "exitCode": 0,
-    "passedScan": true
+    "exitCode": 3,
+    "passedScan": false,
+    "reason": "No package or lock files found; scan inconclusive."
   },
   "vulnerabilities": [],
-  "scannedFiles": [
-    {
-      "path": "/Users/vivekkumar/Documents/codebase/homeoffice/scan-yarn/package.json",
-      "relative": "package.json",
-      "type": "package.json"
-    },
-    {
-      "path": "/Users/vivekkumar/Documents/codebase/homeoffice/scan-yarn/yarn.lock",
-      "relative": "yarn.lock",
-      "type": "yarn.lock"
-    }
-  ]
+  "scannedFiles": []
 }
