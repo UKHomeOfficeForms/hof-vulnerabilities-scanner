@@ -238,6 +238,8 @@ async function main() {
       );
     }
     process.exitCode = 1; // signal compromised detection
+  } else if (scannedFiles.length === 0) {
+    console.log('No package or lock files found; scan inconclusive. ⚠️');
   } else {
     console.log('No compromised packages found. ✅');
   }
@@ -265,7 +267,7 @@ async function main() {
       scanner: 'hof-vulnerabilities-scanner',
       version: '1.0.0',
       scannedFilesCount: scannedFiles.length,
-      findingsCount: result.length,
+      vulnerabilitiesCount: result.length,
       compromisedPackageCount,
       compromisedVersionCount,
       exitCode: process.exitCode || 0,

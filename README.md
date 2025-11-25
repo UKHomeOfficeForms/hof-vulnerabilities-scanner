@@ -133,15 +133,5 @@ File: `compromised-packages.txt`
 - Currently supports Yarn v1 lockfile syntax; pnpm or npm lockfiles are not parsed yet.
 - Empty or unreadable directories are skipped silently.
 
-## Automating in CI (example)
-
-```bash
-node index.js --root "$PWD" || EXIT=$?
-if [ "${EXIT}" = "1" ]; then
-  echo "Compromised packages detected" >&2
-  exit 1
-fi
-exit ${EXIT:-0}
-```
 
 Run `node index.js` to perform a scan. ✅
