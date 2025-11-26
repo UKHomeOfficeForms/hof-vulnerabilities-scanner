@@ -78,8 +78,10 @@ Written to the chosen `--json-out` path (default `scan-results.json`). Key parts
   "meta": {
     "generatedAt": "2025-11-25T10:42:00.000Z",
     "root": "/repo",
+    "scanner": "hof-vulnerabilities-scanner",
+    "version": "1.0.0",
     "scannedFilesCount": 42,
-    "findingsCount": 3,
+    "vulnerabilitiesCount": 3,
     "compromisedPackageCount": 250,      // unique package names in list
     "compromisedVersionCount": 571,      // total name:version pairs tracked
     "exitCode": 1,
@@ -101,7 +103,16 @@ Written to the chosen `--json-out` path (default `scan-results.json`). Key parts
 }
 ```
 
-`meta` summarizes the scan and decision; `vulnerabilities` lists each matched compromised version; `scannedFiles` lists all dependency files inspected.
+`meta` summarizes the scan and decision; important keys:
+
+- `scanner`: identifier of this tool (`hof-vulnerabilities-scanner`).
+- `version`: tool version string.
+- `scannedFilesCount`: number of dependency files scanned.
+- `vulnerabilitiesCount`: total unique compromised findings (matches console `vulnerabilities: N`).
+- `compromisedPackageCount` / `compromisedVersionCount`: inventory size of the compromised list.
+- `exitCode` and `passedScan`: outcome signals.
+
+`vulnerabilities` lists each matched compromised version; `scannedFiles` lists all dependency files inspected.
 
 ## How Matching Works
 
