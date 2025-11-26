@@ -51,7 +51,7 @@ for (const fixture of fixtures) {
     failures.push(`[${fixture.name}] missing directory at ${fixture.root}`);
     continue;
   }
-  const { cp, jsonPath } = runScanner(fixture);
+  const { jsonPath } = runScanner(fixture);
   const json = loadJson(jsonPath);
   if (!json) {
     failures.push(
@@ -82,13 +82,13 @@ for (const fixture of fixtures) {
       `[${fixture.name}] vulnerabilities presence mismatch (expected hasFindings=${fixture.expect.hasFindings}, got ${hasFindings})`
     );
   }
-  // Validate findingsCount consistency if present
+  // Validate vulnerabilitiesCount consistency if present
   if (
-    typeof meta.findingsCount === 'number' &&
-    meta.findingsCount !== vulnerabilities.length
+    typeof meta.vulnerabilitiesCount === 'number' &&
+    meta.vulnerabilitiesCount !== vulnerabilities.length
   ) {
     failures.push(
-      `[${fixture.name}] meta.findingsCount (${meta.findingsCount}) does not match vulnerabilities length (${vulnerabilities.length})`
+      `[${fixture.name}] meta.vulnerabilitiesCount (${meta.vulnerabilitiesCount}) does not match vulnerabilities length (${vulnerabilities.length})`
     );
   }
   // Validate reason logic
