@@ -1704,8 +1704,3 @@ zapier-scripts:7.8.4
 zuper-cli:1.0.1
 zuper-sdk:1.0.57
 zuper-stream:2.0.9
-
-# TEST: accessible-autocomplete added to verify scanner flags these versions
-accessible-autocomplete:1.2.3
-accessible-autocomplete:2.0.4
-accessible-autocomplete:3.0.1
