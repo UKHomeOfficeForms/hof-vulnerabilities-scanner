@@ -1,6 +1,6 @@
 # hof-vulnerabilities-scanner
 
-It matches ONLY exact package name + version pairs listed in `compromised-packages.txt` against:
+It matches ONLY exact package name + version pairs listed in `local-compromised-package-list.txt` against fetched "Cobenian/shai-hulud-detect" text file.
 
 - Declared dependency specs in every `package.json`
 - Resolved installed versions in `yarn.lock`
@@ -129,14 +129,42 @@ Written to the chosen `--json-out` path (default `scan-results.json`). Key parts
 - The resolved installed version is matched against the compromised list.
 - This ensures you catch transitive dependencies actually installed, even if not pinned directly in `package.json`.
 
-## Updating the Compromised List
+## Updating the Local Compromised List
 
-File: `compromised-packages.txt`
+There is a local file called `local-compromised-package-list.txt` that contains a manual updated list of compromised packages.  
+This list is separate from the fetched file from "Cobenian/shai-hulud-detect" for more info [more info](https://github.com/Cobenian/shai-hulud-detect), which was previously stored in the now obsolete `compromised-packages.txt` .
+
 
 - Format: `package-name:version` one per line.
 - Lines beginning with `#` are comments.
-- Append newly discovered compromised versions; avoid removing entries unless verified safe.
+- Packages are in alphabetical order per each section.
+- Append newly discovered compromised versions (according to its section); avoid removing entries unless verified safe.
 - Commit changes so team scans stay consistent.
+
+### Example of packages names structure and position in the file
+
+| package format type                | example of package                                   | position       |
+|------------------------------------|------------------------------------------------------|----------------|
+| Starting with number               | `02-echo:0.0.7`                                      | top section    |
+| Starting with at symbol and slash  | `@accordproject/concerto-analysis:3.24.1`            | mid section    |
+| Starting with at symbol and hyphen | `@basic-ui-components-stc/basic-ui-components:1.0.5` | mid section    |
+| Only hyphens                       | `ace-colorpicker-rpk:0.0.14`                         | bottom section |
+| Only letters                       | `angulartics2:14.1.1`                                | bottom section |
+
+### Example of information you may add regarding a specific attack or last update
+```
+# ========================================================================
+# SEPTEMBER 8, 2025 - CHALK/DEBUG CRYPTO THEFT ATTACK (18+ packages)
+# Cryptocurrency wallet address replacement malware targeting browser users
+# Attack duration: ~2 hours on September 8, 2025
+# ========================================================================
+```
+## Compromised List Fetch & Merge Dynamically
+
+Updated: The scanner now pulls the latest compromised packages list directly from a raw GitHub file using a new API call `fetchCompromisedPackages()`.  
+The fetched list is merged with the local static list `local-compromised-package-list.txt`, ignoring duplicates, using the new `mergeCompromisedList()` function in `index.js`.  
+The old `compromised-packages.txt` file has been removed.  
+All logic for fetching, merging, and scanning is now updated to use these sources.
 
 ## Limitations / Notes
 

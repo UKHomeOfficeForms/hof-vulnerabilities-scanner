@@ -1,15 +1,26 @@
-const fs = require('fs');
+// const fs = require('fs');
+// const fsp = fs.promises;
+// const path = require('path');
+import fs from 'fs';
 const fsp = fs.promises;
-const path = require('path');
+import path from 'path';
+const URL ='https://raw.githubusercontent.com/Cobenian/shai-hulud-detect/refs/heads/main/compromised-packages.txt';
+import fetchCompromisedPackages from './compromisedFileApi.js'
+
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const WORKSPACE_DEFAULT_ROOT = path.resolve(__dirname, '..');
-const COMPROMISED_FILE = path.resolve(__dirname, 'compromised-packages.txt');
+const LOCAL_COMPROMISED_FILE = path.resolve(__dirname, 'local-compromised-package-list.txt');
+const FETCHED_COMPROMISED_FILE = await fetchCompromisedPackages(URL);
+const MERGED_COMPROMISED_FILE_LIST = mergeCompromisedLists(LOCAL_COMPROMISED_FILE, FETCHED_COMPROMISED_FILE);
 
-async function loadCompromisedList(filePath) {
-  const raw = await fsp.readFile(filePath, 'utf8');
+// async function loadCompromisedList(filePath) {
+async function loadCompromisedList(MERGED_COMPROMISED_FILE_LIST) {
   const byName = new Map();
   const exactSet = new Set();
-  const lines = raw.split(/\r?\n/);
+  const lines = MERGED_COMPROMISED_FILE_LIST;
   for (const line of lines) {
     const trimmed = line.trim();
     if (!trimmed || trimmed.startsWith('#')) continue;
@@ -180,6 +191,11 @@ function scanYarnLock(content, filePath, compromised) {
   }
   return vulnerabilities;
 }
+function mergeCompromisedLists(list1, list2) {
+  const lines = list1.split(/\r?\n/).concat(list2.split(/\r?\n/));
+   return Array.from(new Set(lines.filter(line => line.trim())));
+   //return lines
+}
 
 async function main() {
   const argv = process.argv.slice(2);
@@ -189,8 +205,9 @@ async function main() {
       ? path.resolve(argv[rootFlagIdx + 1])
       : WORKSPACE_DEFAULT_ROOT;
 
+
   // Load compromised list
-  const compromised = await loadCompromisedList(COMPROMISED_FILE);
+  const compromised = await loadCompromisedList(MERGED_COMPROMISED_FILE_LIST);
 
   const vulnerabilities = [];
   const scannedFiles = [];
