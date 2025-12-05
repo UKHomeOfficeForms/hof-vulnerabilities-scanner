@@ -2,12 +2,13 @@ export default async function fetchCompromisedPackages(URL) {
   try{
     const response = await fetch(URL);
     if (!response.ok) {
-      throw new Error(`Network response was not ok. Status is : , ${response.status}, ${response.statusText}`);
+     console.warn(`Warning: Network error, status is : , ${response.status}, ${response.statusText}`);
+    return ' '
     }
-    const data = await response.text()
-    return data;
+    return await response.text()
   } catch(error){
-    throw new Error(`Failed to fetch compromised packages: ${error.message}`)
+    console.warn(`Warning: Failed to fetch compromised packages: ${error.message}`)
+    return ' '
   };
 }
 

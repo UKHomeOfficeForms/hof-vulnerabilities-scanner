@@ -11,3 +11,6 @@
 # - packages are in alphabetical order in each section.
 
 
+@FAKEaccordproject/concerto-analysis:3.24.1
+FAKEISSIM/concerto-linter-default-ruleset:3.24.1
+@FAKEAGINaccordproject-concerto-linter:3.24.1
