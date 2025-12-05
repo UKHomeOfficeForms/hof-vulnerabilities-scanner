@@ -132,7 +132,7 @@ Written to the chosen `--json-out` path (default `scan-results.json`). Key parts
 ## Updating the Local Compromised List
 
 There is a local file called `local-compromised-package-list.txt` that contains a manual updated list of compromised packages.  
-This list is separate from the fetched file from "Cobenian/shai-hulud-detect" for more info [more info](https://github.com/Cobenian/shai-hulud-detect), which was previously stored in the now obsolete `compromised-packages.txt` .
+This list is separate from the fetched file from "Cobenian/shai-hulud-detect" for more info [the raw file](https://github.com/Cobenian/shai-hulud-detect), which was previously stored in the now obsolete `compromised-packages.txt` .
 
 
 - Format: `package-name:version` one per line.
