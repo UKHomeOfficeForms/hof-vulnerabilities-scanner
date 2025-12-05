@@ -1,0 +1,16 @@
+# Sources: 
+# Format: package_name:version
+# Last updated: November 2025
+
+# MAINTAINING THIS LIST:
+# - Add new compromised packages as they are discovered
+# - Check security advisories regularly for updates:
+# - Format: one package:version per line
+# - Lines starting with # are comments and will be ignored
+# - Only Remove packages once you have verified they should not be on this list
+# - packages are in alphabetical order in each section.
+
+
+@FAKEaccordproject/concerto-analysis:3.24.1
+FAKEISSIM/concerto-linter-default-ruleset:3.24.1
+@FAKEAGINaccordproject-concerto-linter:3.24.1

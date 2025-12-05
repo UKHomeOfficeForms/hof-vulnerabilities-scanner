@@ -1,17 +1,247 @@
 {
   "meta": {
-    "generatedAt": "2025-11-25T15:40:06.223Z",
-    "root": "",
+    "generatedAt": "2025-12-05T15:34:33.828Z",
+    "root": "/Users/paola/Desktop/projects",
     "scanner": "hof-vulnerabilities-scanner",
     "version": "1.0.0",
-    "scannedFilesCount": 0,
+    "scannedFilesCount": 46,
     "vulnerabilitiesCount": 0,
-    "compromisedPackageCount": 526,
-    "compromisedVersionCount": 979,
-    "exitCode": 3,
-    "passedScan": false,
-    "reason": "No package or lock files found; scan inconclusive."
+    "compromisedPackageCount": 1032,
+    "compromisedVersionCount": 1677,
+    "exitCode": 0,
+    "passedScan": true
   },
   "vulnerabilities": [],
-  "scannedFiles": []
+  "scannedFiles": [
+    {
+      "path": "/Users/paola/Desktop/projects/additional-security-checks/package.json",
+      "relative": "additional-security-checks/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/additional-security-checks/yarn.lock",
+      "relative": "additional-security-checks/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/asylum-contact-questionnaire/package.json",
+      "relative": "asylum-contact-questionnaire/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/asylum-contact-questionnaire/yarn.lock",
+      "relative": "asylum-contact-questionnaire/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/explosives-precursors-poisons/package.json",
+      "relative": "explosives-precursors-poisons/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/explosives-precursors-poisons/yarn.lock",
+      "relative": "explosives-precursors-poisons/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/firearms/package.json",
+      "relative": "firearms/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/firearms/yarn.lock",
+      "relative": "firearms/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/gro/package.json",
+      "relative": "gro/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/gro/yarn.lock",
+      "relative": "gro/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hof/frontend/govuk-template/example/package.json",
+      "relative": "hof/frontend/govuk-template/example/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hof/package.json",
+      "relative": "hof/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hof/sandbox/package.json",
+      "relative": "hof/sandbox/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hof/sandbox/yarn.lock",
+      "relative": "hof/sandbox/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hof/yarn.lock",
+      "relative": "hof/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hof-Forked/frontend/govuk-template/example/package.json",
+      "relative": "hof-Forked/frontend/govuk-template/example/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hof-Forked/package.json",
+      "relative": "hof-Forked/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hof-Forked/sandbox/package.json",
+      "relative": "hof-Forked/sandbox/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hof-Forked/sandbox/yarn.lock",
+      "relative": "hof-Forked/sandbox/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hof-Forked/yarn.lock",
+      "relative": "hof-Forked/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hof-generator/lib/cli/init/template/package.json",
+      "relative": "hof-generator/lib/cli/init/template/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hof-generator/package.json",
+      "relative": "hof-generator/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/clue-resolver/package.json",
+      "relative": "hofDependencies/clue-resolver/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/clue-resolver/yarn.lock",
+      "relative": "hofDependencies/clue-resolver/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/file-vault/package.json",
+      "relative": "hofDependencies/file-vault/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/file-vault/yarn.lock",
+      "relative": "hofDependencies/file-vault/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/hof-rds-api/package.json",
+      "relative": "hofDependencies/hof-rds-api/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/hof-rds-api/yarn.lock",
+      "relative": "hofDependencies/hof-rds-api/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/html-pdf-converter/package.json",
+      "relative": "hofDependencies/html-pdf-converter/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/html-pdf-converter/yarn.lock",
+      "relative": "hofDependencies/html-pdf-converter/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/icasework-resolver/package.json",
+      "relative": "hofDependencies/icasework-resolver/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/icasework-resolver/yarn.lock",
+      "relative": "hofDependencies/icasework-resolver/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/ms-schema/package.json",
+      "relative": "hofDependencies/ms-schema/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/ms-schema/yarn.lock",
+      "relative": "hofDependencies/ms-schema/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/save-return-api/package.json",
+      "relative": "hofDependencies/save-return-api/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/save-return-api/yarn.lock",
+      "relative": "hofDependencies/save-return-api/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/save-return-email-alerts/package.json",
+      "relative": "hofDependencies/save-return-email-alerts/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/hofDependencies/save-return-email-alerts/yarn.lock",
+      "relative": "hofDependencies/save-return-email-alerts/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/home-office-forms-demo/package.json",
+      "relative": "home-office-forms-demo/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/home-office-forms-demo/yarn.lock",
+      "relative": "home-office-forms-demo/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/lmr/package.json",
+      "relative": "lmr/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/lmr/yarn.lock",
+      "relative": "lmr/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/modern-slavery/package.json",
+      "relative": "modern-slavery/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/modern-slavery/yarn.lock",
+      "relative": "modern-slavery/yarn.lock",
+      "type": "yarn.lock"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/paf/package.json",
+      "relative": "paf/package.json",
+      "type": "package.json"
+    },
+    {
+      "path": "/Users/paola/Desktop/projects/paf/yarn.lock",
+      "relative": "paf/yarn.lock",
+      "type": "yarn.lock"
+    }
+  ]
 }
