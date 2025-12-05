@@ -28,6 +28,8 @@ node index.js
 node index.js --root ~/projects/app --json-out ~/projects/app/tmp/vuln-scan.json
 ```
 
+Run `node index.js` to perform a scan. ✅
+
 ## CLI Flags
 
 | Flag | Value | Purpose |
@@ -166,11 +168,16 @@ The fetched list is merged with the local static list `local-compromised-package
 The old `compromised-packages.txt` file has been removed.  
 All logic for fetching, merging, and scanning is now updated to use these sources.
 
+## Run test suit
+
+This scanner has a test suits that will run using the command `node index.test.js` .  
+The test will look for the `scan-yarn` and `scan-no-lock` folders at same level as hof-vulnerabilities-scanner.
+
+Currently the test will use the fetched file from "Cobenian/shai-hulud-detect" instead of mocking the api call.
+
 ## Limitations / Notes
 
 - Exact-version matching only; a range like `^5.6.0` will not flag unless a lockfile resolves to a listed compromised version.
 - Currently supports Yarn v1 lockfile syntax; pnpm or npm lockfiles are not parsed yet.
 - Empty or unreadable directories are skipped silently.
 
-
-Run `node index.js` to perform a scan. ✅
