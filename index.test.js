@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const { spawnSync } = require('child_process');
 
+
 const scannerPath = path.resolve(__dirname, 'index.js');
 const fixtures = [
   {
