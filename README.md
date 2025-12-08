@@ -172,6 +172,9 @@ All logic for fetching, merging, and scanning is now updated to use these source
 
 This scanner has a test suits that will run using the command `node index.test.js` .  
 The test will look for the `scan-yarn` and `scan-no-lock` folders at same level as hof-vulnerabilities-scanner.
+The test expects`scan-no-lock` to be empty and checks for an inconclusive result.
+If `scan-yarn` is also empty, the test expects a clean scan (exit code 0), but your scanner will return inconclusive (exit code 3), causing the test to fail.
+To pass the test for `scan-yarn`, add a mock `package.json` or `yarn.lock` file to that folder.
 
 Currently the test will use the fetched file from "Cobenian/shai-hulud-detect" instead of mocking the api call.
 
