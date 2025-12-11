@@ -1,0 +1,13 @@
+{
+"type": "module",
+"jest": {
+  "transform": {},
+  "testMatch": ["**/tests/**/*.js"]
+},
+  "scripts": {
+    "test": "node --experimental-vm-modules $(yarn bin jest)"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}

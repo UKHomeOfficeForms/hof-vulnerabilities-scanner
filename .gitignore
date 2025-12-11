@@ -1,2 +1,8 @@
 .vscode
 .idea
+node_modules/
+.DS_Store
+scan-yarn/yarn.lock
+tests/scan-results-scan-no-lock.json
+tests/scan-results-scan-yarn.json
+scan-results.json

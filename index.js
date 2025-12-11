@@ -1,13 +1,11 @@
 import fs from 'fs';
 const fsp = fs.promises;
 import path from 'path';
-const URL ='https://raw.githubusercontent.com/Cobenian/shai-hulud-detect/refs/heads/main/compromised-packages.txt';
-import fetchCompromisedPackages from './compromisedFileApi.js'
-
+import fetchCompromisedPackages from '../compromisedFileApi.js'
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
+const URL ='https://raw.githubusercontent.com/Cobenian/shai-hulud-detect/refs/heads/main/compromised-packages.txt';
 const WORKSPACE_DEFAULT_ROOT = path.resolve(__dirname, '..');
 const LOCAL_COMPROMISED_FILE = path.resolve(__dirname, 'local-compromised-package-list.txt');
 const FETCHED_COMPROMISED_FILE = await fetchCompromisedPackages(URL);
@@ -189,7 +187,7 @@ function readLocalCompromisedFile(filePath) {
   try {
     const raw = fs.readFileSync(filePath, 'utf8');
     return raw.split(/\r?\n/).map(line => line.trim()).filter(line => line && !line.startsWith('#'));
-    }catch (err) {
+    } catch (err) {
     throw new Error(`Failed to read local compromised file: ${err.message}`);
   }
 }

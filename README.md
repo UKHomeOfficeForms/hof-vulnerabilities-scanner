@@ -168,10 +168,10 @@ The fetched list is merged with the local static list `local-compromised-package
 The old `compromised-packages.txt` file has been removed.  
 All logic for fetching, merging, and scanning is now updated to use these sources.
 
-## Run test suit
+## Run test suite
 
-This scanner has a test suits that will run using the command `node index.test.js` .  
-The test will look for the `scan-yarn` and `scan-no-lock` folders at same level as hof-vulnerabilities-scanner.
+This scanner has test suites that will run using the command `yarn test` .  
+The test will look for the `scan-yarn` and `scan-no-lock` folders at same level as test's files.
 The test expects`scan-no-lock` to be empty and checks for an inconclusive result.
 If `scan-yarn` is also empty, the test expects a clean scan (exit code 0), but your scanner will return inconclusive (exit code 3), causing the test to fail.
 To pass the test for `scan-yarn`, add a mock `package.json` or `yarn.lock` file to that folder.
