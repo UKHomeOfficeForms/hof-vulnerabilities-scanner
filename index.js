@@ -1,7 +1,7 @@
 import fs from 'fs';
 const fsp = fs.promises;
 import path from 'path';
-import fetchCompromisedPackages from '../compromisedFileApi.js'
+import fetchCompromisedPackages from './compromisedFileApi.js';
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -186,13 +186,18 @@ function scanYarnLock(content, filePath, compromised) {
 function readLocalCompromisedFile(filePath) {
   try {
     const raw = fs.readFileSync(filePath, 'utf8');
-    return raw.split(/\r?\n/).map(line => line.trim()).filter(line => line && !line.startsWith('#'));
-    } catch (err) {
+    return raw
+      .split(/\r?\n/)
+      .map(line => line.trim())
+      .filter(line => line && !line.startsWith('#'));
+  } catch (err) {
     throw new Error(`Failed to read local compromised file: ${err.message}`);
   }
 }
 function mergeCompromisedLists(localList, fetchedList) {
-  return Array.from(new Set(localList.concat(fetchedList).filter(line => line)));
+  return Array.from(
+    new Set(localList.concat(fetchedList).filter(line => line))
+  );
 }
 
 async function main() {
@@ -203,10 +208,13 @@ async function main() {
       ? path.resolve(argv[rootFlagIdx + 1])
       : WORKSPACE_DEFAULT_ROOT;
 
-
   // Load compromised list
   const localList = readLocalCompromisedFile(LOCAL_COMPROMISED_FILE);
-  const fetchedList = FETCHED_COMPROMISED_FILE.split(/\r?\n/).map(line => line.trim()).filter(line => line && !line.startsWith('#'));
+  const fetchedList = FETCHED_COMPROMISED_FILE
+    ? FETCHED_COMPROMISED_FILE.split(/\r?\n/)
+        .map(line => line.trim())
+        .filter(line => line && !line.startsWith('#'))
+    : [];
   const mergedList = mergeCompromisedLists(localList, fetchedList);
   const compromised = await loadCompromisedList(mergedList);
 
