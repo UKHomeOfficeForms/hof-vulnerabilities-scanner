@@ -10,6 +10,6 @@ export default async function fetchCompromisedPackages(URL) {
     // this will also appear when running the tests
     console.warn(`Warning: Failed to fetch compromised packages: ${error.message}`)
     return null
-  };
+  }
 }
 
