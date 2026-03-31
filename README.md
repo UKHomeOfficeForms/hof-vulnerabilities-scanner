@@ -32,10 +32,10 @@ Run `node index.js` to perform a scan. ✅
 
 ## CLI Flags
 
-| Flag | Value | Purpose |
-|------|-------|---------|
-| `--root <path>` | directory path | Root directory to recursively search for `package.json` and `yarn.lock` files |
-| `--json-out <file>` | file path | Where to write detailed structured JSON results |
+| Flag                | Value          | Purpose                                                                       |
+|---------------------|----------------|-------------------------------------------------------------------------------|
+| `--root <path>`     | directory path | Root directory to recursively search for `package.json` and `yarn.lock` files |
+| `--json-out <file>` | file path      | Where to write detailed structured JSON results                               |
 
 ## What the Console Output Means
 
@@ -62,12 +62,12 @@ If no candidate files are found at all you will get an inconclusive scan with a 
 
 ## Exit Codes
 
-| Code | Meaning |
-|------|---------|
-| `0` | Scan completed, no compromised packages detected |
-| `1` | Compromised packages detected (at least one vulnerability) |
-| `2` | Scanner runtime failure (unexpected error) |
-| `3` | No dependency files found – scan inconclusive |
+| Code | Meaning                                                    |
+|------|------------------------------------------------------------|
+| `0`  | Scan completed, no compromised packages detected           |
+| `1`  | Compromised packages detected (at least one vulnerability) |
+| `2`  | Scanner runtime failure (unexpected error)                 |
+| `3`  | No dependency files found – scan inconclusive              |
 
 Use shell conditionals (e.g. CI) to fail builds on exit code `1`.
 
@@ -120,7 +120,7 @@ Written to the chosen `--json-out` path (default `scan-results.json`). Key parts
 
 ### package.json
 
-- For each dependency section (`dependencies`, `devDependencies`, `peerDependencies`, `optionalDependencies`), specs are normalized.
+- For each dependency section (`dependencies`, `devDependencies`, `peerDependencies`, `optionalDependencies`), specs are normalised.
 - Aliases like `"npm:pkg@1.2.3"` extract the real version (`1.2.3`).
 - Multiple OR ranges (`"1.2.3 || 1.2.4"`) are split; each cleaned candidate is checked for exact match.
 - Only exact versions present in the compromised list trigger findings (not broader ranges).
@@ -176,11 +176,11 @@ The test expects`scan-no-lock` to be empty and checks for an inconclusive result
 If `scan-yarn` is also empty, the test expects a clean scan (exit code 0), but your scanner will return inconclusive (exit code 3), causing the test to fail.
 To pass the test for `scan-yarn`, add a mock `package.json` or `yarn.lock` file to that folder.
 
-Currently the test will use the fetched file from "Cobenian/shai-hulud-detect" instead of mocking the api call.
+Currently, the test will use the fetched file from "Cobenian/shai-hulud-detect" instead of mocking the api call.
 
 ## Limitations / Notes
 
 - Exact-version matching only; a range like `^5.6.0` will not flag unless a lockfile resolves to a listed compromised version.
-- Currently supports Yarn v1 lockfile syntax; pnpm or npm lockfiles are not parsed yet.
+- Currently, supports Yarn v1 lockfile syntax; pnpm or npm lockfile are not parsed yet.
 - Empty or unreadable directories are skipped silently.
 
