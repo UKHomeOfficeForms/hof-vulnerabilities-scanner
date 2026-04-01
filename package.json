@@ -5,6 +5,7 @@
   "testMatch": ["**/tests/**/*.js"]
 },
   "scripts": {
+    "scan": "node index.js",
     "test": "node --experimental-vm-modules $(yarn bin jest)"
   },
   "devDependencies": {

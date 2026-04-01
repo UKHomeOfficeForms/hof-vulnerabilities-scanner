@@ -168,10 +168,10 @@ react-leaflet-marker-layer:0.1.5
 # https://socket.dev/blog/axios-npm-package-compromised
 # ========================================================================
 
-axios@1.14.1
-axios@0.30.4
-plain-crypto-js@4.2.0
-plain-crypto-js@4.2.1
+axios:1.14.1
+axios:0.30.4
+plain-crypto-js:4.2.0
+plain-crypto-js:4.2.1
 @shadanai/openclaw:2026.3.28-2
 @shadanai/openclaw:2026.3.28-3
 @shadanai/openclaw: 2026.3.31-1
